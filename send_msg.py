@@ -11,6 +11,10 @@ TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
 
 bot = telebot.TeleBot(TELEGRAM_TOKEN)
 
+@bot.message_handler(commands=['start'])
+def start_message(message):
+    bot.send_message(message.chat.id, 'Привет! Я помогу тебе создать пароль. Какой длины пароль тебе нужен?')
+
 @bot.message_handler(content_types=['text'])
 def send_text(message):
     psw = 0
