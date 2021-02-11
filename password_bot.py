@@ -26,11 +26,12 @@ def create_psw(symbol):
                 psw = str(psw) + str(random.choice(string.ascii_letters))
             else:
                 psw = str(psw) + str(randint(0, 9))
-        send_message(psw[1:11])
+        send_message(psw[1:symbol+1])
     except ValueError:
         send_message('Длинна пароля не число')
 
-symbol = 'dsfddfs'
+symbol = 3
+
 create_psw(symbol)
 
 
