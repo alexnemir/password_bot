@@ -37,7 +37,7 @@ def send_text(message):
         bot.send_message(message.chat.id, password)
     # Если пришло не число
     except ValueError:
-        bot.send_message(message.chat.id, 'Длинна пароля не число')
+        bot.send_message(message.chat.id, 'Введи, пожалуйста, ')
 
 # Запускаем опрос новых сообщений
 bot.polling()
