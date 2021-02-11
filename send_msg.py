@@ -33,11 +33,15 @@ def send_text(message):
                 psw = str(psw) + str(randint(0, 9))
         # Формируем пароль, отбрасывая первый ноль
         password = psw[1:count_symbol+1]
+        # Добавляем сообщение
+        msg_password = f'Твой пароль: {password}'
         # Отправляем пароль
-        bot.send_message(message.chat.id, password)
+        bot.send_message(message.chat.id, msg_password)
     # Если пришло не число
     except ValueError:
-        bot.send_message(message.chat.id, 'Введи, пожалуйста, ')
+        bot.send_message(message.chat.id, 'Введи, пожалуйста, число')
 
-# Запускаем опрос новых сообщений
-bot.polling()
+
+if __name__ == '__main__':
+    # Запускаем опрос новых сообщений
+    bot.polling()
